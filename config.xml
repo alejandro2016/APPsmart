@@ -27,9 +27,3 @@ TravelMedia - By Alejandro Osorio 2014
 <access origin="http://wifienter.net/" browserOnly="true" />
 <access origin="*" browserOnly="true" />
 <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
-
-    <preference name="orientation"                value="landscape" />        <!-- all: default means both landscape and portrait are enabled -->
-    <preference name="target-device"              value="tablet" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
-    <preference name="webviewbounce"              value="true" />
-</widget>
