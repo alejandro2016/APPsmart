@@ -23,7 +23,6 @@ TravelMedia - By Alejandro Osorio 2014
 
 <access origin="190.145.24.146" browserOnly="true" />
 <access origin="http://190.145.24.146" browserOnly="true" />
-<access origin="http://wifienter.net/*" browserOnly="true" />
 <access origin="http://wifienter.net/" browserOnly="true" />
 <access origin="*" browserOnly="true" />
 <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
