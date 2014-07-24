@@ -1,9 +1,24 @@
 /* Dalac */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
 
+@media screen and (orientation:portrait){
+    #landscape{opacity:0;}
+}
+@media screen and (orientation:landscape){
+    #landscape{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: url(../images/smarthotelLogo.png) center top;
+        background-repeat: no-repeat;
+        opacity:1;
+    }
+}
+
 body{
+    
     font-family: 'Open Sans', sans-serif !important;
-    font-size: 14px;
+    font-size: 10pt;
     font-weight: 300;
     color: #333333;
     width: 100%;
@@ -11,6 +26,7 @@ body{
     max-height: 300px;
     max-width: 568px;
 }
+.spacer{height: 10px;} .spacer2{height: 20px;} .spacer3{height: 30px;} .spacer4{height: 40px;}
 
 .bg{ background: url(../images/bg.png) center top; background-repeat: no-repeat;}
 .logoSmart{padding-top: 30px; padding-bottom: 30px; text-align: center; margin-left: auto; margin-right: auto;}
@@ -33,14 +49,20 @@ body{
     height: 300px;
     background: url(../images/bg.png) center top; background-repeat: no-repeat;
     overflow: scroll;
+    border-left: 1px solid;
+    border-color: rgba(198,198,198,1);
 }
-
 .contenido{
     width: 44%;
     height: 300px;
     overflow: scroll;
+    border-left: 1px solid;
+    border-color: rgba(198,198,198,1);
 }
-
+.revisionCuenta{ width: 72%; height: 300px; float: right;}
+.cuenta{width: 95%; margin-left: auto; margin-right: auto;}
+#titulosContenido{ padding-left: 15px; padding-right: 15px;}
+#txtContenido{ padding-left: 15px!important; padding-right: 15px !important;}
 /* *************** INTRO */
 .intro{    height: 280px;}
 .sliderIntro{
@@ -90,11 +112,21 @@ button.btnIntro{
 
 .skipBtn{ text-decoration: none; font-weight: 300; font-size: .8em; text-align: center !important; margin-left: auto; margin-right: auto; color: grey;}
 
+.bgLog{background:rgba(2,2,2,0.6); height: 100% !important; width: 100%;}
+.txtLog{
+    padding-top: 13%;
+    padding-bottom: 14%;
+    padding-left: 25%;
+    padding-right: 25%;
+    text-shadow: none;
+    color: #ffffff;
+}
+.terminosCond{margin-left: 30px; padding-top: 7px; font-size: .8em; padding-bottom: 20px;}
 /* *************** NAVEGACION PRINCIPAL */
 .btnPrincipal{
     margin-left: 1px !important;
     margin-top: 3px !important;
-    width: 49px !important; 
+    width: 90% !important; 
     height: 54px !important;
     
     -webkit-box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
@@ -116,7 +148,7 @@ button.btnIntro{
     padding-bottom: 10px !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
-    font-size: .82em !important;
+    font-size: .75em !important;
     color: #980000 !important;
     font-weight: 400 !important;
     text-align: center !important;
@@ -129,7 +161,7 @@ button.btnIntro{
 /* *************** BOTONES */
 .submenu{    max-height: 300px;}
 .btnSubMenuA p, .btnSubMenuB p, .btnSubMenuC p, { max-width: 95% !important; }
-.btnSubMenuA a, .btnSubMenuB a, .btnSubMenuC a{color: #525858 !important;}
+.btnSubMenuA a, .btnSubMenuB a {color: #525858 !important;}
 
 .btnSubMenuA{
     width: 93% !important;
@@ -143,7 +175,7 @@ button.btnIntro{
     margin-right: auto;
     
     font-weight: 400;
-    font-size: .9em;
+    font-size: .76em;
     text-shadow: 2px 2px 3px #949494;
     
     -webkit-box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.2);
@@ -197,9 +229,9 @@ button.btnIntro{
     margin-right: 6px;
     
     font-weight: 400;
-    font-size: .9em;
+    font-size: .8em;
     text-shadow: 2px 2px 3px #949494;
-    color: #980000;
+    color: #980000 !important;
     float: right;
     
     -webkit-box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.2);
@@ -212,19 +244,45 @@ button.btnIntro{
     background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(147,153,153,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(147,153,153,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#939999',GradientType=0 ); /* IE6-9 */
-
 }
 
 /* *************** CONTENIDO */
+.line{border-bottom: 1px solid;
+    border-color: #929898;
+}
+.nombreUsuario{font-weight: 700; font-size: 1em;}
+.roomUsuario{font-weight: 300; font-size: .8em; padding-bottom: 4px; padding-top: 3px;}
+.headCuenta{font-weight: 600;}
+.datosCuenta, .datosUsuario{font-size: .8em}
+
+.bgUsuarioLog{background: #525858; height:auto;}
+
+.nombreUsuario, .roomUsuario, .headCuenta, .datosCuenta{color: #525858;}
+
+#infoUser{
+    padding-top: 10px;
+}
+.nombreUsuarioLog{text-shadow: none; padding: 5px; color: white;}
+.datosUsuario{padding-bottom: 3px; padding-top: 3px; padding-left: 5px; padding-right: 5px;}
+.area{
+    background: url(../images/bg.png) center -170px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 131px !important;
+}
+.txt{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 .barTitle{ background: rgba(153,0,0,1); height: 25px;}
 .titulo{color: #ffffff; text-align: center; font-weight: 300; text-shadow: none;}
 .btnCheckIn{
-    margin-left: auto !important;
+    margin-left: 4% !important;
     margin-right: auto !important;
-    padding-top: 4px !important;
     height: 28px !important;
-    width: 140px !important;
+    width: 90% !important;
+    text-align: center;
     -webkit-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;
     -webkit-box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.5);
@@ -239,35 +297,22 @@ button.btnIntro{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#990000', endColorstr='#6d0000',GradientType=0 ); /* IE6-9 */
 }
 .checkIn{
-    font-size: .8em !important;
+    font-size: .9em !important;
     text-shadow: none !important;
     font-weight: 300 !important;
     color: white;
     text-align: center !important;
-}
-#infoUser{
-    padding-top: 30px;
-}
-#infoUser.area{
-    background: url(../images/bg.png) center -170px;
-    background-repeat: no-repeat;
-    margin-top: 6px;
-    width: 160px;
-    height: 126px !important;
-}
-.txt{
-    padding-left: 10px;
-    padding-right: 10px;
 }
 .brand{
     height: 25px;
     text-align: center;
     bottom: 0px;
 }
-
+.labelTxt{font-size: .8em;}
+.txtWhite{color: #ffffff !important;}
 /* ****************************** SECTIONS */
 /* *************** HOTEL */
-#info h4, #info p{
+#info h4{
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -275,10 +320,45 @@ button.btnIntro{
     font-size: .9em;
 }
 
+#chatArea{
+    height: 250px;
+    padding: 10px;
+    font-size: .9em;
+    width: 90%;
+    margin-left: auto; margin-right: auto; 
+    border: 1px solid; border-color: #E0E0E0;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    overflow: scroll;
+}
+#infoVuelo{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    height: 90px;
+    border-bottom: 1px solid;
+    border-color: #E0E0E0;
+}
+.aerolinea, .destino, .hora, .llegada{ width: 100%; color: #525858;}
 
+.aerolinea, .hora{ font-weight: 700; font-size: 1.1em;}
+.destino{font-weight: 600; padding-top: 0px; font-size: .9em;}
+#vuelo{color: #980000; }
+.salida{font-size: .8em; padding-top: 5px; color: #929898;}
 
-
-
+.infoPasabordo{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    height: 40px;
+    border-bottom: 1px solid;
+    border-color: #E0E0E0;
+}
+.ajustes{
+    width: 95%; 
+    margin-left: auto; margin-right: auto;
+    text-align: left !important;
+}
 
 
 

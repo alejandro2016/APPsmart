@@ -4,7 +4,7 @@
     id        = "com.phonegap.example"
     version   = "0.1.0">
 
-<name>GuestPortal Beta</name>
+<name>Smart Hotel</name>
 
 <content src="index.html"/>
 
@@ -13,7 +13,7 @@ Powerfull Guest Tools for hospitality services.
 </description>
 
 <author href="http://wifienter.com" email="alejandro.c@wifienter.net">
-TravelMedia - By Alejandro Osorio 2013
+TravelMedia - By Alejandro Osorio 2014
 </author>
 <icon src="icon.png" gap:platform="android" gap:density="ldpi" />
 
@@ -23,8 +23,13 @@ TravelMedia - By Alejandro Osorio 2013
 
 <access origin="190.145.24.146" browserOnly="true" />
 <access origin="http://190.145.24.146" browserOnly="true" />
-<access origin="http://wifienter.net" browserOnly="true" />
+<access origin="http://wifienter.net/*" browserOnly="true" />
+<access origin="http://wifienter.net/" browserOnly="true" />
 <access origin="*" browserOnly="true" />
 <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
 
+    <preference name="orientation"                value="landscape" />        <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="target-device"              value="tablet" />      <!-- all: possible values handset, tablet, or universal -->
+    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="webviewbounce"              value="true" />
 </widget>

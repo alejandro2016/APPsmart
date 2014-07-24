@@ -17,8 +17,9 @@
     
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.mobile-1.4.3.min.js"></script>
+
 </head>
-<body>
+<body id="landscape">
     
 <!-- Start of second page: #one -->
     <div class="page bg" data-role="page" id="page1" data-theme="">
@@ -81,11 +82,12 @@
             <div class="introForm">
                 <p>Por favor ingrese el código de su hotel</p>
                 <div data-role="controlgroup" data-type="horizontal">
-                    <input type="text" id="search-control-group" placeholder="Código" data-wrapper-class="controlgroup-textinput ui-btn">
-                    
-                    <button class="btnIntro btn-sm" data-theme="a">
-                        <a class="btnIntro" href="hotel.html" href="../" data-ajax="false">Go!</a>
-                    </button>
+                    <input type="text" name="search-control-group" id="search-control-group" placeholder="Código" data-wrapper-class="controlgroup-textinput ui-btn">
+                     
+                    <input type="button" class="btnIntro btn-sm" data-theme="a" onClick="login()" value="Ok!" name="go" id="go">
+                    <!--<button class="btnIntro btn-sm" data-theme="a">-->
+                    <!--    <a class="btnIntro" href="log.html" data-ajax="false">Go!</a>
+                    </button> Comentado por insercción de programación login-hotel-->
                 </div>
             </div>
             
@@ -96,12 +98,39 @@
         </div><!-- /content -->
 
     </div><!-- /page two -->
-    
+   <script charset="utf&minus;8" type="text/javascript">
+function login()
+{
+ var control = $("#search-control-group").val();	
+ $.get("http://190.145.24.146/app/hotel_login.php",{id_hotel: control}, loginres, "jsonp");
+ 
+ function loginres(respuesta){
+				if (respuesta.licencia != "" && respuesta.licencia != "no") {
+                        var licencia = respuesta.licencia;
+                        var alias = respuesta.alias;						
+					                            localStorage.setItem("mem_licencia", licencia);
+												localStorage.setItem("mem_alias", alias);
+						console.log("Acceso a hotel" + alias);
+						location.reload();
+						document.location.href = "hotel.html";
+                    } else {
+						console.log("Acceso denegado" + respuesta);
+                        $.mobile.changePage("index.html");
+                           }
+				
+				    }
+}
+</script> 
     
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+$(document).bind("mobileinit", function(){
+   $.mobile.allowCrossDomainPages = true;
+});
+</script>
 
 </body>
 </html>
