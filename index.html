@@ -21,7 +21,53 @@
 </head>
 <body id="landscape">
     
-  
+<!-- Start of second page: #one -->
+    <div class="page bg" data-role="page" id="page1" data-theme="">
+        
+        <div class="intro" role="main">
+            <div class="sliderIntro">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                    <ol class="carousel-indicators dotIntro">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="images/intro1.jpg" width="500" height="auto" alt="...">
+                            <div class="carousel-caption"></div>
+                        </div>
+
+                        <div class="item">
+                            <img src="images/intro1.jpg" width="500" height="auto" alt="...">
+                            <div class="carousel-caption"></div>
+                        </div>
+
+                        <div class="item">
+                            <img src="images/intro1.jpg" width="500" height="auto" alt="">
+                            <div class="carousel-caption"></div>
+                        </div>
+                    </div>
+
+                <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            
+        </div><!-- /content -->
+        <div class="footer" >
+            <div class="skipBtn"><a href="#page2" data-transition="slide">Skip</a></div>
+        </div><!-- /footer -->
+
+    </div><!-- /page one -->
 
     
 <!-- Start of second page: #two -->
@@ -35,12 +81,11 @@
             <div class="introForm">
                 <p>Por favor ingrese el código de su hotel</p>
                 <div data-role="controlgroup" data-type="horizontal">
-                    <input type="text" name="search-control-group" id="search-control-group" placeholder="Código" data-wrapper-class="controlgroup-textinput ui-btn">
-                     
-                    <input type="button" class="btnIntro btn-sm" data-theme="a" onClick="login()" value="Ok!" name="go" id="go">
-                    <!--<button class="btnIntro btn-sm" data-theme="a">-->
-                    <!--    <a class="btnIntro" href="log.html" data-ajax="false">Go!</a>
-                    </button> Comentado por insercción de programación login-hotel-->
+                    <input type="text" id="search-control-group" placeholder="Código" data-wrapper-class="controlgroup-textinput ui-btn">
+                    
+                    <button class="btnIntro btn-sm" data-theme="a">
+                        <a class="btnIntro" href="hotel.html" data-ajax="false">Go!</a>
+                    </button>
                 </div>
             </div>
             
@@ -51,39 +96,12 @@
         </div><!-- /content -->
 
     </div><!-- /page two -->
-   <script charset="utf&minus;8" type="text/javascript">
-function login()
-{
- var control = $("#search-control-group").val();	
- $.get("http://190.145.24.146/app/hotel_login.php",{id_hotel: control}, loginres, "jsonp");
- 
- function loginres(respuesta){
-				if (respuesta.licencia != "" && respuesta.licencia != "no") {
-                        var licencia = respuesta.licencia;
-                        var alias = respuesta.alias;						
-					                            localStorage.setItem("mem_licencia", licencia);
-												localStorage.setItem("mem_alias", alias);
-						console.log("Acceso a hotel" + alias);
-						location.reload();
-						document.location.href = "hotel.html";
-                    } else {
-						console.log("Acceso denegado" + respuesta);
-                        $.mobile.changePage("index.html");
-                           }
-				
-				    }
-}
-</script> 
+    
     
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-$(document).bind("mobileinit", function(){
-   $.mobile.allowCrossDomainPages = true;
-});
-</script>
 
 </body>
 </html>

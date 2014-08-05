@@ -9,22 +9,18 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        background: url(../images/smarthotelLogo.png) center top;
         background-repeat: no-repeat;
         opacity:1;
     }
 }
 
 body{
-    
     font-family: 'Open Sans', sans-serif !important;
-    font-size: 10pt;
-    font-weight: 300;
+    font-size: 1.3em;
+    font-weight: 500;
     color: #333333;
     width: 100%;
-    height: 300px;
-    max-height: 300px;
-    max-width: 568px;
+    max-height:  100%;
 }
 .spacer{height: 10px;} .spacer2{height: 20px;} .spacer3{height: 30px;} .spacer4{height: 40px;}
 
@@ -32,12 +28,19 @@ body{
 .logoSmart{padding-top: 30px; padding-bottom: 30px; text-align: center; margin-left: auto; margin-right: auto;}
 .logoWifiIntro{ padding-right: 10px; padding-top: 28px; float: right;}
 .logoWifi{ padding-left: 10px; padding-top: 28px; float: left;}
-.page{ margin-top: 20px;}
-
+.page{ padding-top: 20px;}
+.barTop{
+    width: 100%;
+    height: 20px !important; 
+    position: fixed !important; 
+    top: 0px !important; 
+    background: #ffffff; 
+    z-index: 999;
+}
 /* *************** AREAS ACTIVAS */
 .sideNav{
     width: 28%;
-    height: 300px;
+    height: 100%;
     z-index: 99;
     float: left;
     position: absolute;
@@ -46,7 +49,7 @@ body{
 .mainContenido .contenido {float: right;}
 .sideNavSubmenu{
     width: 28%;
-    height: 300px;
+    height: 100%;
     background: url(../images/bg.png) center top; background-repeat: no-repeat;
     overflow: scroll;
     border-left: 1px solid;
@@ -54,23 +57,28 @@ body{
 }
 .contenido{
     width: 44%;
-    height: 300px;
-    overflow: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+    overflow: scroll !important;
+    overflow: hidden;
     border-left: 1px solid;
     border-color: rgba(198,198,198,1);
 }
-.revisionCuenta{ width: 72%; height: 300px; float: right;}
+.revisionCuenta{ width: 72%; height: 100%; float: right;}
 .cuenta{width: 95%; margin-left: auto; margin-right: auto;}
 #titulosContenido{ padding-left: 15px; padding-right: 15px;}
 #txtContenido{ padding-left: 15px!important; padding-right: 15px !important;}
 /* *************** INTRO */
-.intro{    height: 280px;}
+.intro{ height: 100%;}
 .sliderIntro{
     padding-top: 20px;
-    width: 500px;
-    height: 220px;
+    width: 90%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
+    background: #000000;
 }
 .dotIntro{    color: red !important;}
 .introForm{
@@ -110,7 +118,9 @@ button.btnIntro{
     font-weight: 300;
 }
 
-.skipBtn{ text-decoration: none; font-weight: 300; font-size: .8em; text-align: center !important; margin-left: auto; margin-right: auto; color: grey;}
+.skipBtn{ text-decoration: none; 
+    font-weight: 300; font-size: .8em; 
+    text-align: center !important; margin-left: auto; margin-right: auto; color: grey;}
 
 .bgLog{background:rgba(2,2,2,0.6); height: 100% !important; width: 100%;}
 .txtLog{
@@ -159,23 +169,24 @@ button.btnIntro{
 }
 
 /* *************** BOTONES */
-.submenu{    max-height: 300px;}
+.submenu{ height: 100%;}
 .btnSubMenuA p, .btnSubMenuB p, .btnSubMenuC p, { max-width: 95% !important; }
 .btnSubMenuA a, .btnSubMenuB a {color: #525858 !important;}
 
 .btnSubMenuA{
     width: 93% !important;
+    height: 40px;
     min-height: 30px;
     
     text-align: left;
     
-    argin-top: 2px;
+    argin-top: 5px;
     margin-bottom: 2px;
     margin-left: auto;
     margin-right: auto;
     
     font-weight: 400;
-    font-size: .76em;
+    font-size: .9em;
     text-shadow: 2px 2px 3px #949494;
     
     -webkit-box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.2);
@@ -229,7 +240,7 @@ button.btnIntro{
     margin-right: 6px;
     
     font-weight: 400;
-    font-size: .8em;
+    font-size: .9em;
     text-shadow: 2px 2px 3px #949494;
     color: #980000 !important;
     float: right;
@@ -268,7 +279,7 @@ button.btnIntro{
     background: url(../images/bg.png) center -170px;
     background-repeat: no-repeat;
     width: 100%;
-    height: 131px !important;
+    height: auto;
 }
 .txt{
     padding-left: 10px;
@@ -278,10 +289,9 @@ button.btnIntro{
 .barTitle{ background: rgba(153,0,0,1); height: 25px;}
 .titulo{color: #ffffff; text-align: center; font-weight: 300; text-shadow: none;}
 .btnCheckIn{
-    margin-left: 4% !important;
+    margin-left: auto !important;
     margin-right: auto !important;
-    height: 28px !important;
-    width: 90% !important;
+    width: 90%;
     text-align: center;
     -webkit-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;
@@ -297,13 +307,14 @@ button.btnIntro{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#990000', endColorstr='#6d0000',GradientType=0 ); /* IE6-9 */
 }
 .checkIn{
-    font-size: .9em !important;
+    font-size: .8em !important;
     text-shadow: none !important;
     font-weight: 300 !important;
     color: white;
     text-align: center !important;
 }
 .brand{
+    margin-top: 2%;
     height: 25px;
     text-align: center;
     bottom: 0px;
